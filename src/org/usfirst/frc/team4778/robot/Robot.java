@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4778.robot;
 
 import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team4778.robot.subsystems.Hanger;
+import org.usfirst.frc.team4778.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -11,11 +13,18 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static RobotDrive drive = new RobotDrive(RobotMap.L0, RobotMap.L1, RobotMap.R0, RobotMap.R1);
+	public static final Shooter shooter = new Shooter();
+	public static final Hanger hanger = new Hanger();
 	public static OI oi = new OI();
 	Command autonomousCommand;
 
 	@Override
-	public void robotInit() {}
+	public void robotInit() {
+		drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+	}
 
 	@Override
 	public void disabledPeriodic() {

@@ -20,7 +20,7 @@ public class RobotMap {
 	// Hopper
 	public static VictorSP HP = new VictorSP(7);
 	// Hanging Mechanism
-	public static TalonSRX HM = new TalonSRX(8);
+	public static VictorSP HM = new VictorSP(8);
 	/*
 	// Competition Setup
 	// Left Motors
