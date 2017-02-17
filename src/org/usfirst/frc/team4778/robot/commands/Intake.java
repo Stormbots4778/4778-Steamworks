@@ -5,9 +5,9 @@ import org.usfirst.frc.team4778.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Shoot extends Command {
-	public Shoot() {
-		requires(Robot.shooter);
+public class Intake extends Command {
+	public Intake() {
+		requires(Robot.intake);
 	}
 
 	@Override
@@ -15,8 +15,7 @@ public class Shoot extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.S0.set(1);
-		RobotMap.S1.set(1);
+		RobotMap.IN.set(1);
 	}
 
 	@Override
@@ -26,8 +25,7 @@ public class Shoot extends Command {
 
 	@Override
 	protected void end() {
-		RobotMap.S0.set(0);
-		RobotMap.S1.set(0);
+		RobotMap.IN.set(0);
 	}
 
 	@Override
