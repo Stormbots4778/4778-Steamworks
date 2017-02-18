@@ -21,6 +21,8 @@ public class RobotMap {
 	public static VictorSP HP = new VictorSP(7);
 	// Hanging Mechanism
 	public static VictorSP HM = new VictorSP(8);
+	// Feeder
+	public static VictorSP FD = new VictorSP(9);
 	/*
 	// Competition Setup
 	// Left Motors
@@ -38,5 +40,7 @@ public class RobotMap {
 	public static VictorSP HP = new VictorSP(7);
 	// Hanging Mechanism
 	public static TalonSRX HM = new TalonSRX(8);
+	// Feeder
+	public static VictorSP FD = new VictorSP(9);
 	*/
 }

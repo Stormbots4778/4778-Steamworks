@@ -5,18 +5,18 @@ import org.usfirst.frc.team4778.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Dispense extends Command {
-	public Dispense() {
-		requires(Robot.hopper);
+public class Feed extends Command {
+	public Feed() {
+		requires(Robot.feeder);
 	}
 
 	@Override
-	protected void initialize() {}
+	protected void initialize() {
+		RobotMap.FD.set(0.8);
+	}
 
 	@Override
-	protected void execute() {
-		RobotMap.HP.set(0.5);
-	}
+	protected void execute() {}
 
 	@Override
 	protected boolean isFinished() {
@@ -25,7 +25,7 @@ public class Dispense extends Command {
 
 	@Override
 	protected void end() {
-		RobotMap.HP.set(0);
+		RobotMap.FD.set(0);
 	}
 
 	@Override

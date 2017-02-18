@@ -15,8 +15,8 @@ public class Shoot extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.S0.set(1);
-		RobotMap.S1.set(1);
+		RobotMap.S0.set(0.8);
+		RobotMap.S1.set(0.8);
 	}
 
 	@Override

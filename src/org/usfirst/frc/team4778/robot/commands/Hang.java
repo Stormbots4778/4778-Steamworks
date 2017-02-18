@@ -6,8 +6,11 @@ import org.usfirst.frc.team4778.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Hang extends Command {
-	public Hang() {
+	double power;
+
+	public Hang(double pwr) {
 		requires(Robot.hanger);
+		power = pwr;
 	}
 
 	@Override
@@ -15,7 +18,7 @@ public class Hang extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.HM.set(1);
+		RobotMap.HM.set(power);
 	}
 
 	@Override

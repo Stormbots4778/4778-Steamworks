@@ -6,8 +6,11 @@ import org.usfirst.frc.team4778.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Intake extends Command {
-	public Intake() {
+	double power;
+
+	public Intake(double pwr) {
 		requires(Robot.intake);
+		pwr = power;
 	}
 
 	@Override
@@ -15,7 +18,7 @@ public class Intake extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.IN.set(1);
+		RobotMap.IN.set(power);
 	}
 
 	@Override

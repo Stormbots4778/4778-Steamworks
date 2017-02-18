@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4778.robot;
 
 import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team4778.robot.subsystems.Feeder;
 import org.usfirst.frc.team4778.robot.subsystems.Hanger;
 import org.usfirst.frc.team4778.robot.subsystems.Hopper;
 import org.usfirst.frc.team4778.robot.subsystems.Intake;
@@ -14,11 +15,12 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 public class Robot extends IterativeRobot {
 	public static final Drivetrain drivetrain = new Drivetrain();
-	public static RobotDrive drive = new RobotDrive(RobotMap.L0, RobotMap.L1, RobotMap.R0, RobotMap.R1);
+	public static final RobotDrive drive = new RobotDrive(RobotMap.L0, RobotMap.L1, RobotMap.R0, RobotMap.R1);
 	public static final Shooter shooter = new Shooter();
 	public static final Hanger hanger = new Hanger();
 	public static final Intake intake = new Intake();
 	public static final Hopper hopper = new Hopper();
+	public static final Feeder feeder = new Feeder();
 	public static OI oi = new OI();
 	Command autonomousCommand;
 
