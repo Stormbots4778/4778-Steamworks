@@ -1,8 +1,9 @@
 package org.usfirst.frc.team4778.robot;
 
-import edu.wpi.first.wpilibj.TalonSRX;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
+
+import com.ctre.CANTalon;
 
 public class RobotMap {
 	// Practice Setup
@@ -13,8 +14,8 @@ public class RobotMap {
 	public static Victor R0 = new Victor(2);
 	public static Victor R1 = new Victor(3);
 	// Shooter
-	public static TalonSRX S0 = new TalonSRX(4);
-	public static TalonSRX S1 = new TalonSRX(5);
+	public static CANTalon S0 = new CANTalon(4);
+	public static CANTalon S1 = new CANTalon(5);
 	// Intake
 	public static VictorSP IN = new VictorSP(6);
 	// Hopper

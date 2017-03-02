@@ -35,8 +35,8 @@ public class OI {
 	*/
 	// Redundant Gamepad Buttons (note: G is for Gamepad)
 	// Hanging Mechanism
-	public static JoystickButton coilG = new JoystickButton(gamepad, 8);
-	public static JoystickButton uncoilG = new JoystickButton(gamepad, 7);
+	public static JoystickButton coilG = new JoystickButton(leftJoystick, 1);
+	public static JoystickButton uncoilG = new JoystickButton(rightJoystick, 1);
 	// Intake
 	public static JoystickButton intakeG = new JoystickButton(gamepad, 6);
 	public static JoystickButton outtakeG = new JoystickButton(gamepad, 5);

@@ -15,7 +15,7 @@ public class Drive extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.drive.tankDrive(OI.leftJoystick, OI.rightJoystick);
+		Robot.drive.tankDrive(OI.leftJoystick, OI.rightJoystick, true);
 	}
 
 	@Override
