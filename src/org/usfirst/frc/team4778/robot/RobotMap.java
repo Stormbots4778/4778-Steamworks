@@ -2,6 +2,7 @@ package org.usfirst.frc.team4778.robot;
 
 import com.ctre.CANTalon;
 
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
 
@@ -24,9 +25,8 @@ public class RobotMap {
 	public static CANTalon HM = new CANTalon(8);
 	// Feeder
 	public static VictorSP FD = new VictorSP(9);
-	// Gear Shifting
-	//public static Solenoid out = new Solenoid(x); // ID TBD
-	//public static Solenoid in = new Solenoid(x); // ID TBD
+	// Drive Gear Shifting
+	public static Solenoid driveShift = new Solenoid(0);
 	/*
 	// Competition Setup
 	// Left Motors

@@ -14,7 +14,6 @@ public class OI {
 	public static Joystick leftJoystick = new Joystick(1);
 	public static Joystick rightJoystick = new Joystick(0);
 	// Redundant Gamepad
-	public static Joystick gamepad = new Joystick(2);
 	// Button Board 
 	//
 	// Update when new drivers station is built
@@ -38,14 +37,16 @@ public class OI {
 	public static JoystickButton coilG = new JoystickButton(leftJoystick, 1);
 	public static JoystickButton uncoilG = new JoystickButton(rightJoystick, 1);
 	// Intake
-	public static JoystickButton intakeG = new JoystickButton(gamepad, 6);
-	public static JoystickButton outtakeG = new JoystickButton(gamepad, 5);
+	public static JoystickButton intakeG = new JoystickButton(leftJoystick, 2);
+	public static JoystickButton outtakeG = new JoystickButton(rightJoystick, 2);
 	// Shooter
-	public static JoystickButton shootG = new JoystickButton(gamepad, 2);
+	public static JoystickButton shootG = new JoystickButton(leftJoystick, 4);
 	// Hopper
-	public static JoystickButton dispenseG = new JoystickButton(gamepad, 3);
+	public static JoystickButton dispenseG = new JoystickButton(leftJoystick, 3);
 	// Ball Feed
-	public static JoystickButton feedG = new JoystickButton(gamepad, 1);
+	public static JoystickButton feedG = new JoystickButton(rightJoystick, 4);
+	// Drivetrain Gear Shifting
+	public static JoystickButton shift = new JoystickButton(rightJoystick, 3);
 
 	public OI() {
 		/*
