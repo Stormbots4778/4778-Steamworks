@@ -1,9 +1,9 @@
 package org.usfirst.frc.team4778.robot;
 
+import com.ctre.CANTalon;
+
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
-
-import com.ctre.CANTalon;
 
 public class RobotMap {
 	// Practice Setup
@@ -14,16 +14,19 @@ public class RobotMap {
 	public static Victor R0 = new Victor(2);
 	public static Victor R1 = new Victor(3);
 	// Shooter
-	public static CANTalon S0 = new CANTalon(4);
-	public static CANTalon S1 = new CANTalon(5);
+	public static CANTalon S0 = new CANTalon(10);
+	public static CANTalon S1 = new CANTalon(11);
 	// Intake
-	public static VictorSP IN = new VictorSP(6);
+	public static CANTalon IN = new CANTalon(6);
 	// Hopper
-	public static VictorSP HP = new VictorSP(7);
+	public static CANTalon HP = new CANTalon(7);
 	// Hanging Mechanism
-	public static VictorSP HM = new VictorSP(8);
+	public static CANTalon HM = new CANTalon(8);
 	// Feeder
 	public static VictorSP FD = new VictorSP(9);
+	// Gear Shifting
+	//public static Solenoid out = new Solenoid(x); // ID TBD
+	//public static Solenoid in = new Solenoid(x); // ID TBD
 	/*
 	// Competition Setup
 	// Left Motors
