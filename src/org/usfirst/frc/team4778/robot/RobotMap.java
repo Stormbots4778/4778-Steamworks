@@ -18,11 +18,11 @@ public class RobotMap {
 	public static CANTalon S0 = new CANTalon(10);
 	public static CANTalon S1 = new CANTalon(11);
 	// Intake
-	public static CANTalon IN = new CANTalon(6);
+	public static CANTalon IN = new CANTalon(12);
 	// Hopper
-	public static CANTalon HP = new CANTalon(7);
+	public static CANTalon HP = new CANTalon(13);
 	// Hanging Mechanism
-	public static CANTalon HM = new CANTalon(8);
+	public static CANTalon HM = new CANTalon(14);
 	// Feeder
 	public static VictorSP FD = new VictorSP(9);
 	// Drive Gear Shifting
