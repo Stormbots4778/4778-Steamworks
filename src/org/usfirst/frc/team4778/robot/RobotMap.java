@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
 
 public class RobotMap {
-	//Test Comment
 	// Practice Setup
 	// Left Motors
 	public static Victor L0 = new Victor(0);
