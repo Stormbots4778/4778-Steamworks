@@ -15,7 +15,7 @@ public class Dispense extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.HP.set(0.5);
+		RobotMap.HP.set(-0.5);
 	}
 
 	@Override
