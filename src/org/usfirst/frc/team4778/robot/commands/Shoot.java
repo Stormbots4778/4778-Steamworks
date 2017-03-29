@@ -15,8 +15,10 @@ public class Shoot extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.S0.set(0.8);
-		RobotMap.S1.set(0.8);
+		RobotMap.S0.set(-0.8);
+		RobotMap.S1.set(-0.8);
+		RobotMap.S0.enableBrakeMode(false);
+		RobotMap.S1.enableBrakeMode(false);
 	}
 
 	@Override

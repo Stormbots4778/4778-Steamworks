@@ -15,7 +15,7 @@ public class Intake extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.IN.set(-1);
+		RobotMap.IN.set(1);
 	}
 
 	@Override
