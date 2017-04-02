@@ -22,8 +22,7 @@ public class Robot extends IterativeRobot {
 	public static final Intake intake = new Intake();
 	public static final Hopper hopper = new Hopper();
 	public static final Feeder feeder = new Feeder();
-	public Solenoid gearChuteIn = RobotMap.gearChuteIn;
-	public Solenoid gearChuteOut = RobotMap.gearChuteOut;
+	public Solenoid gearChute = RobotMap.gearChute;
 	public static OI oi = new OI();
 	Command autonomousCommand;
 
@@ -33,8 +32,7 @@ public class Robot extends IterativeRobot {
 		drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-		gearChuteIn.set(true);
-		gearChuteIn.set(false);
+		gearChute.set(false);
 	}
 
 	@Override

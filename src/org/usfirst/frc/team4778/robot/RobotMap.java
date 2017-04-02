@@ -26,6 +26,5 @@ public class RobotMap {
 	// Feeder
 	public static VictorSP FD = new VictorSP(9);
 	// Drive Gear Shifting
-	public static Solenoid gearChuteOut = new Solenoid(0);
-	public static Solenoid gearChuteIn = new Solenoid(1);
+	public static Solenoid gearChute = new Solenoid(0);
 }

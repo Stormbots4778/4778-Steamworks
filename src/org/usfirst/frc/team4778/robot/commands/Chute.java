@@ -15,10 +15,8 @@ public class Chute extends Command {
 	@Override
 	protected void execute() {
 		finished = false;
-		boolean chuteOut = RobotMap.gearChuteOut.get();
-		boolean chuteIn = RobotMap.gearChuteIn.get();
-		RobotMap.gearChuteOut.set(!chuteOut);
-		RobotMap.gearChuteIn.set(!chuteIn);
+		boolean chute = RobotMap.gearChute.get();
+		RobotMap.gearChute.set(!chute);
 		finished = true;
 	}
 
