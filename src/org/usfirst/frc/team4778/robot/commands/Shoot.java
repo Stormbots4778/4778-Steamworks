@@ -45,7 +45,7 @@ public class Shoot extends Command {
 		_sb.append("\tspd:");
 		_sb.append(RobotMap.S0.getSpeed());
 		/* Speed mode */
-		double targetSpeed = 1160.25; //leftYstick * 1500.0; /* 1500 RPM in either direction */
+		double targetSpeed = 3087; //leftYstick * 1500.0; /* 1500 RPM in either direction */
 		RobotMap.S0.changeControlMode(TalonControlMode.Speed);
 		RobotMap.S0.set(-targetSpeed); /* 1500 RPM in either direction */
 		RobotMap.S1.set(-targetSpeed); /* 1500 RPM in either direction */
