@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.OI;
 import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
@@ -37,8 +36,6 @@ public class Shoot extends Command {
 
 	@Override
 	public void execute() {
-		RobotMap.S0.set(-0.85);
-		RobotMap.S1.set(-0.85);
 		RobotMap.S0.enableBrakeMode(false);
 		RobotMap.S1.enableBrakeMode(false);
 		double motorOutput = RobotMap.S0.getOutputVoltage() / RobotMap.S0.getBusVoltage();
@@ -47,21 +44,16 @@ public class Shoot extends Command {
 		_sb.append(motorOutput);
 		_sb.append("\tspd:");
 		_sb.append(RobotMap.S0.getSpeed());
-		if (OI.gamepad.getRawButton(2)) {
-			/* Speed mode */
-			double targetSpeed = 1160.25; //leftYstick * 1500.0; /* 1500 RPM in either direction */
-			RobotMap.S0.changeControlMode(TalonControlMode.Speed);
-			RobotMap.S0.set(targetSpeed); /* 1500 RPM in either direction */
-			/* append more signals to print when in speed mode. */
-			_sb.append("\terr:");
-			_sb.append(RobotMap.S0.getClosedLoopError());
-			_sb.append("\ttrg:");
-			_sb.append(targetSpeed);
-		} else {
-			/* Percent voltage mode */
-			RobotMap.S0.changeControlMode(TalonControlMode.PercentVbus);
-			RobotMap.S0.set(0);
-		}
+		/* Speed mode */
+		double targetSpeed = 1160.25; //leftYstick * 1500.0; /* 1500 RPM in either direction */
+		RobotMap.S0.changeControlMode(TalonControlMode.Speed);
+		RobotMap.S0.set(-targetSpeed); /* 1500 RPM in either direction */
+		RobotMap.S1.set(-targetSpeed); /* 1500 RPM in either direction */
+		/* append more signals to print when in speed mode. */
+		_sb.append("\terr:");
+		_sb.append(RobotMap.S0.getClosedLoopError());
+		_sb.append("\ttrg:");
+		_sb.append(targetSpeed);
 		if (++_loops >= 10) {
 			_loops = 0;
 			System.out.println(_sb.toString());
