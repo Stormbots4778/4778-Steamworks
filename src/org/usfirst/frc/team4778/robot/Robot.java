@@ -68,6 +68,9 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Shooter P: ", RobotMap.S0.getP());
 		SmartDashboard.putNumber("Shooter I: ", RobotMap.S0.getI());
 		SmartDashboard.putNumber("Shooter D: ", RobotMap.S0.getD());
+		SmartDashboard.putBoolean("Gear Chute Status: ", RobotMap.isGearChuteOpen);
+		SmartDashboard.putBoolean("Shooter Status: ", RobotMap.isShooterOn);
+		SmartDashboard.putBoolean("Ball Feed Status", RobotMap.isFeedOn);
 	}
 
 	@Override

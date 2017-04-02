@@ -13,6 +13,7 @@ public class Feed extends Command {
 	@Override
 	protected void initialize() {
 		RobotMap.FD.set(0.8);
+		RobotMap.isFeedOn = true;
 	}
 
 	@Override
@@ -26,6 +27,7 @@ public class Feed extends Command {
 	@Override
 	protected void end() {
 		RobotMap.FD.set(0);
+		RobotMap.isFeedOn = false;
 	}
 
 	@Override

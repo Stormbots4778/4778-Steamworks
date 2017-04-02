@@ -22,6 +22,7 @@ public class Shoot extends Command {
 	public void execute() {
 		RobotMap.S0.enableBrakeMode(false);
 		RobotMap.S1.enableBrakeMode(false);
+		RobotMap.isShooterOn = true;
 		double motorOutput = RobotMap.S0.getOutputVoltage() / RobotMap.S0.getBusVoltage();
 		/* prepare line to print */
 		_sb.append("\tout:");
@@ -54,6 +55,7 @@ public class Shoot extends Command {
 	protected void end() {
 		RobotMap.S0.set(0);
 		RobotMap.S1.set(0);
+		RobotMap.isShooterOn = false;
 	}
 
 	@Override

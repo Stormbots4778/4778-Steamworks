@@ -16,6 +16,7 @@ public class Chute extends Command {
 	protected void execute() {
 		finished = false;
 		boolean chute = RobotMap.gearChute.get();
+		RobotMap.isGearChuteOpen = !chute;
 		RobotMap.gearChute.set(!chute);
 		finished = true;
 	}
