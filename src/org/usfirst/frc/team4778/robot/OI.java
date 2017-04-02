@@ -20,11 +20,11 @@ public class OI {
 	// Update when new drivers station is built
 	//
 	// Hanging Mechanism
-	public static JoystickButton coilG = new JoystickButton(gamepad, 8);
-	public static JoystickButton uncoilG = new JoystickButton(gamepad, 7);
+	public static JoystickButton coilG = new JoystickButton(gamepad, 7);
+	public static JoystickButton uncoilG = new JoystickButton(gamepad, 8);
 	// Intake
 	public static JoystickButton intakeG = new JoystickButton(gamepad, 6);
-	//public static JoystickButton outtakeG = new JoystickButton(gamepad, 5);
+	public static JoystickButton outtakeG = new JoystickButton(gamepad, 5);
 	// Shooter
 	public static JoystickButton shootG = new JoystickButton(gamepad, 2);
 	// Hopper
@@ -41,7 +41,7 @@ public class OI {
 		uncoilG.whileHeld(new Hang(-1));
 		// Intake
 		intakeG.whileHeld(new Intake());
-		//outtakeG.whileHeld(new Intake());
+		outtakeG.whileHeld(new Intake());
 		// Shooter
 		shootG.toggleWhenPressed(new Shoot());
 		// Hopper

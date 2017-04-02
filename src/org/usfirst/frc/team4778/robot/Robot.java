@@ -46,7 +46,7 @@ public class Robot extends IterativeRobot {
 		RobotMap.S0.configPeakOutputVoltage(+12.0f, -12.0f);
 		/* set closed loop gains in slot0 */
 		RobotMap.S0.setProfile(0);
-		RobotMap.S0.setF(0.041439);
+		RobotMap.S0.setF(0.04875);
 		RobotMap.S0.setP(0.22);
 		RobotMap.S0.setI(0);
 		RobotMap.S0.setD(0);
@@ -61,7 +61,6 @@ public class Robot extends IterativeRobot {
 	public void updateSmartDashboard() {
 		System.out.println("+robot update-smartdashboard");
 		SmartDashboard.putNumber("Shooter Encoder Velocity: ", RobotMap.S0.getEncVelocity());
-		SmartDashboard.putNumber("1: ", 1);
 	}
 
 	@Override
@@ -90,6 +89,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		updateSmartDashboard();
 	}
 
 	@Override
