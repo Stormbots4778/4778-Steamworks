@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4778.robot;
 
+import org.usfirst.frc.team4778.robot.commands.Chute;
 import org.usfirst.frc.team4778.robot.commands.Dispense;
 import org.usfirst.frc.team4778.robot.commands.Feed;
 import org.usfirst.frc.team4778.robot.commands.Hang;
@@ -15,7 +16,6 @@ public class OI {
 	public static Joystick rightJoystick = new Joystick(0);
 	// Logitech Gamepad
 	public static Joystick gamepad = new Joystick(2);
-	// Button Board 
 	//
 	// Update when new drivers station is built
 	//
@@ -24,42 +24,31 @@ public class OI {
 	public static JoystickButton uncoilG = new JoystickButton(gamepad, 7);
 	// Intake
 	public static JoystickButton intakeG = new JoystickButton(gamepad, 6);
-	public static JoystickButton outtakeG = new JoystickButton(gamepad, 5);
+	//public static JoystickButton outtakeG = new JoystickButton(gamepad, 5);
 	// Shooter
 	public static JoystickButton shootG = new JoystickButton(gamepad, 2);
 	// Hopper
 	public static JoystickButton dispenseG = new JoystickButton(gamepad, 3);
 	// Ball Feed
 	public static JoystickButton feedG = new JoystickButton(gamepad, 1);
+	// Gear Chute
+	public static JoystickButton chuteG = new JoystickButton(gamepad, 4);
 
 	public OI() {
-		/*
-		Will be button board calls
-		// Hanging Mechanism
-		coil.whileHeld(new Hang(1));
-		uncoil.whileHeld(new Hang(-1));
-		// Intake
-		intake.whileHeld(new Intake(1));
-		outtake.whileHeld(new Intake(-1));
-		// Shooter
-		shoot.toggleWhenPressed(new Shoot());
-		// Hopper
-		dispense.toggleWhenPressed(new Dispense());
-		// Ball Feed
-		feed.toggleWhenPressed(new Feed());
-		*/
-		// Redundant Gamepad Calls
+		// Gamepad Calls
 		// Hanging Mechanism
 		coilG.whileHeld(new Hang(1));
 		uncoilG.whileHeld(new Hang(-1));
 		// Intake
 		intakeG.whileHeld(new Intake());
-		outtakeG.whileHeld(new Intake());
+		//outtakeG.whileHeld(new Intake());
 		// Shooter
 		shootG.toggleWhenPressed(new Shoot());
 		// Hopper
 		dispenseG.toggleWhenPressed(new Dispense());
 		// Ball Feed
 		feedG.toggleWhenPressed(new Feed());
+		// Gear Chute
+		chuteG.whenPressed(new Chute());
 	}
 }

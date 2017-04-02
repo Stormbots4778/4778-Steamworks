@@ -1,36 +1,34 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Shoot extends Command {
-	public Shoot() {
-		requires(Robot.shooter);
-	}
+public class Chute extends Command {
+	boolean finished = false;
+
+	public Chute() {}
 
 	@Override
 	protected void initialize() {}
 
 	@Override
 	protected void execute() {
-		RobotMap.S0.set(-0.85);
-		RobotMap.S1.set(-0.85);
-		RobotMap.S0.enableBrakeMode(false);
-		RobotMap.S1.enableBrakeMode(false);
+		finished = false;
+		boolean chuteOut = RobotMap.gearChuteOut.get();
+		boolean chuteIn = RobotMap.gearChuteIn.get();
+		RobotMap.gearChuteOut.set(!chuteOut);
+		RobotMap.gearChuteIn.set(!chuteIn);
+		finished = true;
 	}
 
 	@Override
 	protected boolean isFinished() {
-		return false;
+		return finished;
 	}
 
 	@Override
-	protected void end() {
-		RobotMap.S0.set(0);
-		RobotMap.S1.set(0);
-	}
+	protected void end() {}
 
 	@Override
 	protected void interrupted() {
