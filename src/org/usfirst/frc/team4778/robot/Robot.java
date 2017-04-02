@@ -61,6 +61,9 @@ public class Robot extends IterativeRobot {
 	public void updateSmartDashboard() {
 		System.out.println("+robot update-smartdashboard");
 		SmartDashboard.putNumber("Shooter Encoder Velocity: ", RobotMap.S0.getEncVelocity());
+		SmartDashboard.putNumber("Shooter P: ", RobotMap.S0.getP());
+		SmartDashboard.putNumber("Shooter I: ", RobotMap.S0.getI());
+		SmartDashboard.putNumber("Shooter D: ", RobotMap.S0.getD());
 	}
 
 	@Override
