@@ -47,9 +47,13 @@ public class Robot extends IterativeRobot {
 		/* set closed loop gains in slot0 */
 		RobotMap.S0.setProfile(0);
 		RobotMap.S0.setF(0.04875);
-		RobotMap.S0.setP(0.22);
+		RobotMap.S0.setP(0.38);
 		RobotMap.S0.setI(0);
 		RobotMap.S0.setD(0);
+		RobotMap.S0.setCurrentLimit(30);
+		RobotMap.S1.setCurrentLimit(30);
+		RobotMap.S0.EnableCurrentLimit(true);
+		RobotMap.S1.EnableCurrentLimit(true);
 		initSmartDashboard();
 		updateSmartDashboard();
 	}
