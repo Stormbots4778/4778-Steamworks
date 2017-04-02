@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
 	public static final Drivetrain drivetrain = new Drivetrain();
@@ -49,6 +50,17 @@ public class Robot extends IterativeRobot {
 		RobotMap.S0.setP(0.22);
 		RobotMap.S0.setI(0);
 		RobotMap.S0.setD(0);
+		initSmartDashboard();
+		updateSmartDashboard();
+	}
+
+	public void initSmartDashboard() {
+		System.out.println("+robot init-smartdashboard");
+	}
+
+	public void updateSmartDashboard() {
+		System.out.println("+robot update-smartdashboard");
+		SmartDashboard.putNumber("Shooter Encoder Velocity: ", RobotMap.S0.getEncVelocity());
 	}
 
 	@Override
