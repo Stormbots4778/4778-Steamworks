@@ -3,7 +3,6 @@ package org.usfirst.frc.team4778.robot.commands;
 import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
-import com.ctre.CANTalon.FeedbackDevice;
 import com.ctre.CANTalon.TalonControlMode;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -17,22 +16,7 @@ public class Shoot extends Command {
 	}
 
 	@Override
-	protected void initialize() {
-		/* first choose the sensor */
-		RobotMap.S0.setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Relative);
-		RobotMap.S0.reverseSensor(false);
-		//_talon.configEncoderCodesPerRev(XXX), // if using FeedbackDevice.QuadEncoder
-		//_talon.configPotentiometerTurns(XXX), // if using FeedbackDevice.AnalogEncoder or AnalogPot
-		/* set the peak and nominal outputs, 12V means full */
-		RobotMap.S0.configNominalOutputVoltage(+0.0f, -0.0f);
-		RobotMap.S0.configPeakOutputVoltage(+12.0f, -12.0f);
-		/* set closed loop gains in slot0 */
-		RobotMap.S0.setProfile(0);
-		RobotMap.S0.setF(0.1097);
-		RobotMap.S0.setP(0.22);
-		RobotMap.S0.setI(0);
-		RobotMap.S0.setD(0);
-	}
+	protected void initialize() {}
 
 	@Override
 	public void execute() {
