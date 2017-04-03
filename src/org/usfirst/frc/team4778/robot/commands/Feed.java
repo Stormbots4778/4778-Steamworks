@@ -1,14 +1,11 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Feed extends Command {
-	public Feed() {
-		requires(Robot.feeder);
-	}
+	public Feed() {}
 
 	@Override
 	protected void initialize() {

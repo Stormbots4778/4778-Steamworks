@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -9,7 +8,6 @@ public class Hang extends Command {
 	double power;
 
 	public Hang(double pwr) {
-		requires(Robot.hanger);
 		power = pwr;
 	}
 

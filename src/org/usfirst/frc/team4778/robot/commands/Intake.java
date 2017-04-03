@@ -1,14 +1,11 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Intake extends Command {
-	public Intake() {
-		requires(Robot.intake);
-	}
+	public Intake() {}
 
 	@Override
 	protected void initialize() {}

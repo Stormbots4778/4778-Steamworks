@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
 import com.ctre.CANTalon.TalonControlMode;
@@ -11,9 +10,7 @@ public class Shoot extends Command {
 	StringBuilder _sb = new StringBuilder();
 	int _loops = 0;
 
-	public Shoot() {
-		requires(Robot.shooter);
-	}
+	public Shoot() {}
 
 	@Override
 	protected void initialize() {}

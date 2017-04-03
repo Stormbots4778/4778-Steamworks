@@ -1,14 +1,11 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.Robot;
 import org.usfirst.frc.team4778.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Dispense extends Command {
-	public Dispense() {
-		requires(Robot.hopper);
-	}
+	public Dispense() {}
 
 	@Override
 	protected void initialize() {}
