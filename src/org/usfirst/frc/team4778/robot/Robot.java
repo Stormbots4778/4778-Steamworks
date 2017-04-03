@@ -2,6 +2,7 @@ package org.usfirst.frc.team4778.robot;
 
 import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
 
+import com.ctre.CANTalon;
 import com.ctre.CANTalon.FeedbackDevice;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -15,35 +16,40 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final RobotDrive drive = new RobotDrive(RobotMap.L0, RobotMap.L1, RobotMap.R0, RobotMap.R1);
-	public Solenoid gearChute = RobotMap.gearChute;
+	Solenoid gearChute = RobotMap.gearChute;
+	CANTalon S0 = RobotMap.S0;
+	CANTalon S1 = RobotMap.S1;
 	public static OI oi = new OI();
 	Command autonomousCommand;
 
 	@Override
 	public void robotInit() {
+		// Inverts drive motors
 		drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
 		drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+		// Set gear chute to closed on robot init
 		gearChute.set(false);
-		/* first choose the sensor */
-		RobotMap.S0.setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Relative);
-		RobotMap.S0.reverseSensor(false);
-		//_talon.configEncoderCodesPerRev(XXX), // if using FeedbackDevice.QuadEncoder
-		//_talon.configPotentiometerTurns(XXX), // if using FeedbackDevice.AnalogEncoder or AnalogPot
-		/* set the peak and nominal outputs, 12V means full */
-		RobotMap.S0.configNominalOutputVoltage(+0.0f, -0.0f);
-		RobotMap.S0.configPeakOutputVoltage(+12.0f, -12.0f);
-		/* set closed loop gains in slot0 */
-		RobotMap.S0.setProfile(0);
-		RobotMap.S0.setF(0.04875);
-		RobotMap.S0.setP(0.38);
-		RobotMap.S0.setI(0);
-		RobotMap.S0.setD(0);
-		RobotMap.S0.setCurrentLimit(30);
-		RobotMap.S1.setCurrentLimit(30);
-		RobotMap.S0.EnableCurrentLimit(true);
-		RobotMap.S1.EnableCurrentLimit(true);
+		// Chooses the sensor
+		S0.setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Relative);
+		S0.reverseSensor(false);
+		// Set the peak and nominal outputs, 12V means full
+		S0.configNominalOutputVoltage(+0.0f, -0.0f);
+		S0.configPeakOutputVoltage(+12.0f, -12.0f);
+		// Set closed loop gains in slot0
+		S0.setProfile(0);
+		// Set feed-forward gain and PID values
+		S0.setF(0.04875);
+		S0.setP(0.38);
+		S0.setI(0);
+		S0.setD(0);
+		// Set and enable current limit at 30amps
+		S0.setCurrentLimit(30);
+		S1.setCurrentLimit(30);
+		S0.EnableCurrentLimit(true);
+		S1.EnableCurrentLimit(true);
+		// Call initialization and updates smartdashboard
 		initSmartDashboard();
 		updateSmartDashboard();
 	}
@@ -54,10 +60,10 @@ public class Robot extends IterativeRobot {
 
 	public void updateSmartDashboard() {
 		System.out.println("+robot update-smartdashboard");
-		SmartDashboard.putNumber("Shooter Encoder Velocity: ", RobotMap.S0.getEncVelocity());
-		SmartDashboard.putNumber("Shooter P: ", RobotMap.S0.getP());
-		SmartDashboard.putNumber("Shooter I: ", RobotMap.S0.getI());
-		SmartDashboard.putNumber("Shooter D: ", RobotMap.S0.getD());
+		SmartDashboard.putNumber("Shooter Encoder Velocity: ", S0.getEncVelocity());
+		SmartDashboard.putNumber("Shooter P: ", S0.getP());
+		SmartDashboard.putNumber("Shooter I: ", S0.getI());
+		SmartDashboard.putNumber("Shooter D: ", S0.getD());
 		SmartDashboard.putBoolean("Gear Chute Status: ", RobotMap.isGearChuteOpen);
 		SmartDashboard.putBoolean("Shooter Status: ", RobotMap.isShooterOn);
 		SmartDashboard.putBoolean("Ball Feed Status", RobotMap.isFeedOn);

@@ -18,15 +18,16 @@ public class RobotMap {
 	public static CANTalon S0 = new CANTalon(10);
 	public static CANTalon S1 = new CANTalon(11);
 	// Intake
-	public static CANTalon IN = new CANTalon(12);
+	public static CANTalon intake = new CANTalon(12);
 	// Hopper
-	public static CANTalon HP = new CANTalon(13);
+	public static CANTalon hopper = new CANTalon(13);
 	// Hanging Mechanism
-	public static CANTalon HM = new CANTalon(14);
-	// Feeder
-	public static VictorSP FD = new VictorSP(9);
-	// Drive Gear Shifting
+	public static CANTalon hangingMechanism = new CANTalon(14);
+	// Ball Feed
+	public static VictorSP feed = new VictorSP(9);
+	// Gear Chute
 	public static Solenoid gearChute = new Solenoid(0);
+	// Telemetry for smartdashboard
 	public static boolean isGearChuteOpen = false;
 	public static boolean isShooterOn = false;
 	public static boolean isFeedOn = false;

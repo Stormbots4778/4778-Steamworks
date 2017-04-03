@@ -12,7 +12,7 @@ public class Dispense extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.HP.set(-0.5);
+		RobotMap.hopper.set(-0.5);
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class Dispense extends Command {
 
 	@Override
 	protected void end() {
-		RobotMap.HP.set(0);
+		RobotMap.hopper.set(0);
 	}
 
 	@Override

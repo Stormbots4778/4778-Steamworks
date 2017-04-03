@@ -12,7 +12,7 @@ public class Intake extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.IN.set(1);
+		RobotMap.intake.set(1);
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class Intake extends Command {
 
 	@Override
 	protected void end() {
-		RobotMap.IN.set(0);
+		RobotMap.intake.set(0);
 	}
 
 	@Override
