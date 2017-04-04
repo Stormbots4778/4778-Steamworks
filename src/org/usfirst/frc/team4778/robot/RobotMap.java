@@ -27,6 +27,9 @@ public class RobotMap {
 	public static VictorSP feed = new VictorSP(9);
 	// Gear Chute
 	public static Solenoid gearChute = new Solenoid(0);
+	// Encoders
+	//public static Encoder leftEncoder = new Encoder();
+	//public static Encoder rightEncoder = new Encoder();
 	// Telemetry for smartdashboard
 	public static boolean isGearChuteOpen = false;
 	public static boolean isShooterOn = false;

@@ -1,16 +1,13 @@
 package org.usfirst.frc.team4778.robot.commands.auto;
 
 public class AutoDriveForward extends Auto {
-  public AutoDriveForward() {
+	public AutoDriveForward() {
 		super();
 	}
 
-  public void autoInit() {
+	@Override
+	public void autoInit() {}
 
-  }
-
-	public void autoRun() {
-
-	}
-
+	@Override
+	public void autoRun() {}
 }
