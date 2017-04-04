@@ -4,17 +4,20 @@ import org.usfirst.frc.team4778.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class DriveForward extends Command {
+public class AutoDrive extends Command {
 	private boolean isFinished = false;
+	private int distance = 0;
 
-	public DriveForward() {}
+	public AutoDrive(int distance) {
+		this.distance = distance;
+	}
 
 	@Override
 	protected void initialize() {}
 
 	@Override
 	protected void execute() {
-		Robot.drive.tankDrive(-0.5, -0.5);
+		Robot.drive.tankDrive();
 	}
 
 	@Override
