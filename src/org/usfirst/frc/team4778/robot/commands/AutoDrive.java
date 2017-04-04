@@ -1,23 +1,39 @@
 package org.usfirst.frc.team4778.robot.commands;
 
 import org.usfirst.frc.team4778.robot.Robot;
+import org.usfirst.frc.team4778.robot.RobotMap;
+import org.usfirst.frc.team4778.robot.pid.PIDController;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class AutoDrive extends Command {
 	private boolean isFinished = false;
 	private int distance = 0;
+	private PIDController pid;
+	double p, i, d, power;
 
 	public AutoDrive(int distance) {
 		this.distance = distance;
 	}
 
 	@Override
-	protected void initialize() {}
+	protected void initialize() {
+		RobotMap.leftEncoder.setDistancePerPulse(0.073017485503355); // Get ALL THE DIGITS
+		RobotMap.rightEncoder.setDistancePerPulse(0.073017485503355);
+		RobotMap.leftEncoder.reset();
+		RobotMap.rightEncoder.reset();
+		pid = new PIDController(0.05, 0, 0, distance);
+		pid.setTolerence(1);
+		pid.setOutputLimits(-0.85, 0.85);
+	}
 
 	@Override
 	protected void execute() {
-		Robot.drive.tankDrive();
+		double power = pid.computePID(RobotMap.leftEncoder.getDistance());
+		Robot.drive.tankDrive(-power, -power);
+		if (pid.onTarget()) {
+			isFinished = true;
+		}
 	}
 
 	@Override

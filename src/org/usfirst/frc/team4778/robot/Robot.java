@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4778.robot;
 
+import org.usfirst.frc.team4778.robot.commands.AutoDrive;
 import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
 
 import com.ctre.CANTalon;
@@ -12,8 +13,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import org.usfirst.frc.team4778.robot.commands.auto.AutoDriveForward;
 
 public class Robot extends IterativeRobot {
 	public static final Drivetrain drivetrain = new Drivetrain();
@@ -78,7 +77,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = (Command) new AutoDriveForward();
+		autonomousCommand = new AutoDrive(12);
 		if (autonomousCommand != null) autonomousCommand.start();
 	}
 
