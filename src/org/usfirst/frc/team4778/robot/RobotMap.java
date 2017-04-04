@@ -2,6 +2,7 @@ package org.usfirst.frc.team4778.robot;
 
 import com.ctre.CANTalon;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -28,8 +29,8 @@ public class RobotMap {
 	// Gear Chute
 	public static Solenoid gearChute = new Solenoid(0);
 	// Encoders
-	//public static Encoder leftEncoder = new Encoder();
-	//public static Encoder rightEncoder = new Encoder();
+	public static Encoder leftEncoder = new Encoder(0, 1);
+	public static Encoder rightEncoder = new Encoder(2, 3);
 	// Telemetry for smartdashboard
 	public static boolean isGearChuteOpen = false;
 	public static boolean isShooterOn = false;
