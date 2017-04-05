@@ -68,6 +68,9 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putBoolean("Gear Chute Status: ", RobotMap.isGearChuteOpen);
 		SmartDashboard.putBoolean("Shooter Status: ", RobotMap.isShooterOn);
 		SmartDashboard.putBoolean("Ball Feed Status", RobotMap.isFeedOn);
+		SmartDashboard.putNumber("NAVX X: ", RobotMap.ahrs.getRawAccelX());
+		SmartDashboard.putNumber("NAVX Y: ", RobotMap.ahrs.getRawAccelY());
+		SmartDashboard.putNumber("NAVX Z: ", RobotMap.ahrs.getRawAccelZ());
 	}
 
 	@Override

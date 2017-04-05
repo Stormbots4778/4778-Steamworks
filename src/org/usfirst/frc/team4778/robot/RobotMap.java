@@ -1,8 +1,9 @@
 package org.usfirst.frc.team4778.robot;
 
 import com.ctre.CANTalon;
+import com.kauailabs.navx.frc.AHRS;
 
-import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -28,10 +29,8 @@ public class RobotMap {
 	public static VictorSP feed = new VictorSP(9);
 	// Gear Chute
 	public static Solenoid gearChute = new Solenoid(0);
-	// Encoders
-	public static Encoder leftEncoder = new Encoder(0, 1);
-	public static Encoder rightEncoder = new Encoder(2, 3);
-	// Telemetry for smartdashboard
+	// NavX-MXP
+	public static AHRS ahrs = new AHRS(SerialPort.Port.kMXP);
 	public static boolean isGearChuteOpen = false;
 	public static boolean isShooterOn = false;
 	public static boolean isFeedOn = false;
