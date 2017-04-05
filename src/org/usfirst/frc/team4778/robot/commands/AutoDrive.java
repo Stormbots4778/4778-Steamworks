@@ -8,9 +8,15 @@ import edu.wpi.first.wpilibj.command.Command;
 public class AutoDrive extends Command {
 	private boolean isFinished = false;
 	private int time = 0;
-	private double endTime;
+	private double endTime = 0;
+	private int isForward = 1;
 
-	public AutoDrive(int time) {
+	public AutoDrive(int time, int isForward) { // isFoward is either -1 or 1
+		this.time = time;
+		this.isForward = isForward;
+	}
+
+	public AutoDrive(int time) { // isForward default is 1
 		this.time = time;
 	}
 
@@ -24,7 +30,7 @@ public class AutoDrive extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.drive.tankDrive(0.4, 0.4);
+		Robot.drive.arcadeDrive(0.4 * isForward, 0);
 		if (Timer.getFPGATimestamp() >= endTime) {
 			isFinished = true;
 		}
