@@ -5,18 +5,18 @@ import org.usfirst.frc.team4778.robot.Robot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class AutoDrive extends Command {
+public class Brake extends Command {
 	private boolean isFinished = false;
 	private double time = 0;
 	private double endTime = 0;
 	private int isForward = 1;
 
-	public AutoDrive(double time, int isForward) { // isFoward is either -1 or 1
+	public Brake(double time, int isForward) { // isFoward is either -1 or 1
 		this.time = time;
 		this.isForward = isForward;
 	}
 
-	public AutoDrive(int time) { // isForward default is 1
+	public Brake(int time) { // isForward default is 1
 		this.time = time;
 	}
 

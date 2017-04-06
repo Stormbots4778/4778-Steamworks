@@ -16,12 +16,13 @@ public class TurnToAngle extends Command {
 		requires(Robot.drivetrain);
 		this.angle = angle;
 		pid = new PIDController(0.125, 0.0, 0.0, angle);
+		RobotMap.ahrs.reset();
 	}
 
 	@Override
-	protected void initialize() {
-		pid.setTolerence(1);
-		pid.setOutputLimits(-1, 1);
+	protected void initialize() { // DO NOT FORGET: -150 to 150
+		pid.setTolerence(10);
+		pid.setOutputLimits(-0.8, 0.8);
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4778.robot;
 
-import org.usfirst.frc.team4778.robot.commands.AutoDrive;
+import org.usfirst.frc.team4778.robot.commands.auto.AutoCenterGear;
 import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
 
 import com.ctre.CANTalon;
@@ -68,9 +68,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putBoolean("Gear Chute Status: ", RobotMap.isGearChuteOpen);
 		SmartDashboard.putBoolean("Shooter Status: ", RobotMap.isShooterOn);
 		SmartDashboard.putBoolean("Ball Feed Status", RobotMap.isFeedOn);
-		SmartDashboard.putNumber("NAVX X: ", RobotMap.ahrs.getRawAccelX());
-		SmartDashboard.putNumber("NAVX Y: ", RobotMap.ahrs.getRawAccelY());
-		SmartDashboard.putNumber("NAVX Z: ", RobotMap.ahrs.getRawAccelZ());
+		SmartDashboard.putNumber("NAVX Y GYRO: ", RobotMap.ahrs.getYaw());
 	}
 
 	@Override
@@ -80,7 +78,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = new AutoDrive(12);
+		autonomousCommand = new AutoCenterGear();
 		if (autonomousCommand != null) autonomousCommand.start();
 	}
 
@@ -92,6 +90,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopInit() {
 		if (autonomousCommand != null) autonomousCommand.cancel();
+		RobotMap.ahrs.reset();
 	}
 
 	@Override
