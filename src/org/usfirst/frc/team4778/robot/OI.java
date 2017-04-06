@@ -34,7 +34,7 @@ public class OI {
 	public static JoystickButton feedG = new JoystickButton(gamepad, 1);
 	// Gear Chute
 	public static JoystickButton chuteG = new JoystickButton(gamepad, 4);
-	public static JoystickButton invert = new JoystickButton(leftJoystick, 2);
+	public static JoystickButton invert = new JoystickButton(leftJoystick, 1);
 
 	public OI() {
 		// Gamepad Calls
