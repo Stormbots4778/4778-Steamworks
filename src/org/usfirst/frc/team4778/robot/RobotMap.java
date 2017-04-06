@@ -4,6 +4,7 @@ import com.ctre.CANTalon;
 import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
@@ -11,6 +12,8 @@ import edu.wpi.first.wpilibj.VictorSP;
 
 public class RobotMap {
 	// Practice Setup
+	// Camera
+	public static CameraServer camserver = CameraServer.getInstance();
 	// Left Motors
 	public static Victor L0 = new Victor(0);
 	public static Victor L1 = new Victor(1);
