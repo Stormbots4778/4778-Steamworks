@@ -16,7 +16,7 @@ public class AutoDrive extends Command {
 		this.isForward = isForward;
 	}
 
-	public AutoDrive(int time) { // isForward default is 1
+	public AutoDrive(double time) { // isForward default is 1
 		this.time = time;
 	}
 

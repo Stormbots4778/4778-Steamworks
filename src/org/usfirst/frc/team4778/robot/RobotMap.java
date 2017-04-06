@@ -9,9 +9,12 @@ import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 public class RobotMap {
 	// Practice Setup
+	//Auto
+	public static SendableChooser auto = new SendableChooser();
 	// Camera
 	public static CameraServer camserver = CameraServer.getInstance();
 	// Left Motors
