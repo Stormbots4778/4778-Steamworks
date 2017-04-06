@@ -61,14 +61,10 @@ public class Robot extends IterativeRobot {
 
 	public void updateSmartDashboard() {
 		System.out.println("+robot update-smartdashboard");
-		SmartDashboard.putNumber("Shooter Encoder Velocity: ", S0.getEncVelocity());
-		SmartDashboard.putNumber("Shooter P: ", S0.getP());
-		SmartDashboard.putNumber("Shooter I: ", S0.getI());
-		SmartDashboard.putNumber("Shooter D: ", S0.getD());
 		SmartDashboard.putBoolean("Gear Chute Status: ", RobotMap.isGearChuteOpen);
 		SmartDashboard.putBoolean("Shooter Status: ", RobotMap.isShooterOn);
 		SmartDashboard.putBoolean("Ball Feed Status", RobotMap.isFeedOn);
-		SmartDashboard.putNumber("NAVX Y GYRO: ", RobotMap.ahrs.getYaw());
+		SmartDashboard.putNumber("Pressure: ", RobotMap.pressureSensor.getValue());
 	}
 
 	@Override

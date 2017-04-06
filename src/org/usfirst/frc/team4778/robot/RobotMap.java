@@ -3,6 +3,7 @@ package org.usfirst.frc.team4778.robot;
 import com.ctre.CANTalon;
 import com.kauailabs.navx.frc.AHRS;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
@@ -29,6 +30,8 @@ public class RobotMap {
 	public static VictorSP feed = new VictorSP(9);
 	// Gear Chute
 	public static Solenoid gearChute = new Solenoid(0);
+	// Pressure Sensor
+	public static AnalogInput pressureSensor = new AnalogInput(0);
 	// NavX-MXP
 	public static AHRS ahrs = new AHRS(SerialPort.Port.kMXP);
 	public static boolean isGearChuteOpen = false;
