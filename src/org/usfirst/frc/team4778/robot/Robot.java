@@ -68,6 +68,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putBoolean("Shooter Status: ", RobotMap.isShooterOn);
 		SmartDashboard.putBoolean("Ball Feed Status", RobotMap.isFeedOn);
 		SmartDashboard.putNumber("Pressure: ", RobotMap.pressureSensor.getValue());
+		SmartDashboard.putBoolean("Inverted Controls Status: ", RobotMap.isInverted);
 	}
 
 	@Override
@@ -77,7 +78,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = new AutoCenterGear();
+		autonomousCommand = (Command) RobotMap.auto.getSelected();
 		if (autonomousCommand != null) autonomousCommand.start();
 	}
 

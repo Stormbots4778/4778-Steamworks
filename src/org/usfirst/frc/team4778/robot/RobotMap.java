@@ -43,4 +43,5 @@ public class RobotMap {
 	public static boolean isGearChuteOpen = false;
 	public static boolean isShooterOn = false;
 	public static boolean isFeedOn = false;
+	public static boolean isInverted = false;
 }
