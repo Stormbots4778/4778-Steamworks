@@ -29,10 +29,11 @@ public class AutoDrive extends Command {
 	protected void initialize() {
 		//RobotMap.leftEncoder.setDistancePerPulse(0.073017485503355); // Get ALL THE DIGITS
 		//RobotMap.rightEncoder.setDistancePerPulse(0.073017485503355);
-		endTime = Timer.getFPGATimestamp() + 1;
-		pid = new PIDController(0.125, 0, 0, 1);
+		endTime = Timer.getFPGATimestamp() + 5;
+		pid = new PIDController(0.035, 0, 0, 1);
 		pid.setTolerence(1);
 		pid.setOutputLimits(-1, 1);
+		RobotMap.ahrs.reset();
 	}
 
 	@Override
@@ -40,8 +41,8 @@ public class AutoDrive extends Command {
 		if (Timer.getFPGATimestamp() >= endTime) {
 			isFinished = true;
 		}
-		double tout = pid.computePID(RobotMap.ahrs.getYaw());
-		Robot.drive.arcadeDrive(0.8 * isForward, tout);
+		double tout = pid.computePID(RobotMap.ahrs.getYaw() + 10);
+		Robot.drive.arcadeDrive(0.6 * isForward, tout);
 	}
 
 	@Override
