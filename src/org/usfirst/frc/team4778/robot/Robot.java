@@ -6,6 +6,7 @@ import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
 import com.ctre.CANTalon;
 import com.ctre.CANTalon.FeedbackDevice;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Solenoid;
@@ -50,6 +51,8 @@ public class Robot extends IterativeRobot {
 		S1.setCurrentLimit(30);
 		S0.EnableCurrentLimit(true);
 		S1.EnableCurrentLimit(true);
+		// Camera
+		CameraServer.getInstance().addAxisCamera("10.47.78.11");
 		// Call initialization and updates smartdashboard
 		initSmartDashboard();
 		updateSmartDashboard();
@@ -97,6 +100,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopPeriodic() {
+		CameraServer.getInstance().getVideo();
 		Scheduler.getInstance().run();
 		updateSmartDashboard();
 	}

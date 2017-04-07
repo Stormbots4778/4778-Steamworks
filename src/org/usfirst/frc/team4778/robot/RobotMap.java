@@ -11,10 +11,8 @@ import edu.wpi.first.wpilibj.VictorSP;
 
 public class RobotMap {
 	// Practice Setup
-	//Auto
-	//	public static SendableChooser auto = new SendableChooser();
-	// Camera
-	// public static CameraServer camserver = CameraServer.getInstance();
+	// Auto
+	// public static SendableChooser auto = new SendableChooser();
 	// Left Motors
 	public static Victor L0 = new Victor(0);
 	public static Victor L1 = new Victor(1);

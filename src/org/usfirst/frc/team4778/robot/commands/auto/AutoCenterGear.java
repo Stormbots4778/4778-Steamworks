@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4778.robot.commands.auto;
 
 import org.usfirst.frc.team4778.robot.commands.AutoDrive;
-import org.usfirst.frc.team4778.robot.commands.Chute;
 import org.usfirst.frc.team4778.robot.commands.Delay;
 
 public class AutoCenterGear extends Auto {
@@ -9,8 +8,8 @@ public class AutoCenterGear extends Auto {
 	public void autoRun() {
 		addSequential(new AutoDrive(0.5));
 		addSequential(new Delay(0.5));
-		addSequential(new Chute());
-		addSequential(new Delay(1));
-		addSequential(new AutoDrive(0.1, -1));
+		//addSequential(new Chute());
+		//addSequential(new Delay(1));
+		//addSequential(new AutoDrive(0.1, -1));
 	}
 }
