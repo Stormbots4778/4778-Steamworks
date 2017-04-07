@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 public class RobotMap {
@@ -20,17 +19,9 @@ public class RobotMap {
 	// Right Motors
 	public static Victor R0 = new Victor(2);
 	public static Victor R1 = new Victor(3);
-	// Shooter
-	public static CANTalon S0 = new CANTalon(10);
-	public static CANTalon S1 = new CANTalon(11);
-	// Intake
-	public static CANTalon intake = new CANTalon(12);
-	// Hopper
-	public static CANTalon hopper = new CANTalon(13);
 	// Hanging Mechanism
-	public static CANTalon hangingMechanism = new CANTalon(14);
-	// Ball Feed
-	public static VictorSP feed = new VictorSP(9);
+	public static CANTalon hangingMechanism1 = new CANTalon(14);
+	public static CANTalon hangingMechanism2 = new CANTalon(13);
 	// Gear Chute
 	public static Solenoid gearChute = new Solenoid(1);
 	// Pressure Sensor
