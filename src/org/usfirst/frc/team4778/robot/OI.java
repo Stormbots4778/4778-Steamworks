@@ -14,7 +14,7 @@ public class OI {
 	// Joysticks
 	public static Joystick leftJoystick = new Joystick(1);
 	public static Joystick rightJoystick = new Joystick(0);
-	// Logitech Gamepad
+	// Xbox Gamepad
 	public static Joystick gamepad = new Joystick(2);
 	//
 	// Update when new drivers station is built
@@ -33,7 +33,8 @@ public class OI {
 	public static JoystickButton feedG = new JoystickButton(gamepad, 1);
 	// Gear Chute
 	public static JoystickButton chuteG = new JoystickButton(gamepad, 4);
-	public static JoystickButton invert = new JoystickButton(leftJoystick, 1);
+	// Invert Drive
+	//public static JoystickButton invert = new JoystickButton(leftJoystick, 1);
 
 	public OI() {
 		// Gamepad Calls
@@ -51,7 +52,7 @@ public class OI {
 		feedG.toggleWhenPressed(new Feed());
 		// Gear Chute
 		chuteG.whenPressed(new Chute());
-		//Invert controls
+		// Invert controls
 		//invert.whenPressed(new InvertDrive());
 	}
 }

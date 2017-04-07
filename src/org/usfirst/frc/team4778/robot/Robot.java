@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4778.robot;
 
-import org.usfirst.frc.team4778.robot.commands.auto.AutoCenterGear;
+import org.usfirst.frc.team4778.robot.commands.auto.AutoCrossLine;
 import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
 
 import com.ctre.CANTalon;
@@ -77,7 +77,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = new AutoCenterGear();
+		autonomousCommand = new AutoCrossLine();
 		if (autonomousCommand != null) autonomousCommand.start();
 	}
 

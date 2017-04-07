@@ -1,9 +1,5 @@
 package org.usfirst.frc.team4778.robot.commands;
 
-import org.usfirst.frc.team4778.robot.Robot;
-import org.usfirst.frc.team4778.robot.RobotMap;
-
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class InvertDrive extends Command {
@@ -16,11 +12,11 @@ public class InvertDrive extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.isInverted = !RobotMap.isInverted;
+		/*RobotMap.isInverted = !RobotMap.isInverted;
 		Robot.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, !RobotMap.isInverted);
 		Robot.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, !RobotMap.isInverted);
 		Robot.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, !RobotMap.isInverted);
-		Robot.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, !RobotMap.isInverted);
+		Robot.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, !RobotMap.isInverted);*/
 	}
 
 	@Override

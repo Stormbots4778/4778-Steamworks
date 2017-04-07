@@ -8,12 +8,11 @@ import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 public class RobotMap {
 	// Practice Setup
 	//Auto
-	public static SendableChooser auto = new SendableChooser();
+	//	public static SendableChooser auto = new SendableChooser();
 	// Camera
 	// public static CameraServer camserver = CameraServer.getInstance();
 	// Left Motors
@@ -34,7 +33,7 @@ public class RobotMap {
 	// Ball Feed
 	public static VictorSP feed = new VictorSP(9);
 	// Gear Chute
-	public static Solenoid gearChute = new Solenoid(0);
+	public static Solenoid gearChute = new Solenoid(1);
 	// Pressure Sensor
 	public static AnalogInput pressureSensor = new AnalogInput(0);
 	// NavX-MXP
@@ -42,5 +41,5 @@ public class RobotMap {
 	public static boolean isGearChuteOpen = false;
 	public static boolean isShooterOn = false;
 	public static boolean isFeedOn = false;
-	public static boolean isInverted = false;
+	//public static boolean isInverted = false;
 }
