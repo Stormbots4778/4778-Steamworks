@@ -12,21 +12,12 @@ public class OI {
 	public static Joystick rightJoystick = new Joystick(0);
 	// Xbox Gamepad
 	public static Joystick gamepad = new Joystick(2);
-	//
-	// Update when new drivers station is built
+	//           
+	// Update when new drivers station is built - rip
 	//
 	// Hanging Mechanism
 	public static JoystickButton coilG = new JoystickButton(gamepad, 7);
 	public static JoystickButton uncoilG = new JoystickButton(gamepad, 8);
-	// Intake
-	public static JoystickButton intakeG = new JoystickButton(gamepad, 6);
-	public static JoystickButton outtakeG = new JoystickButton(gamepad, 5);
-	// Shooter
-	public static JoystickButton shootG = new JoystickButton(gamepad, 2);
-	// Hopper
-	public static JoystickButton dispenseG = new JoystickButton(gamepad, 3);
-	// Ball Feed
-	public static JoystickButton feedG = new JoystickButton(gamepad, 1);
 	// Gear Chute
 	public static JoystickButton chuteG = new JoystickButton(gamepad, 4);
 	// Invert Drive
