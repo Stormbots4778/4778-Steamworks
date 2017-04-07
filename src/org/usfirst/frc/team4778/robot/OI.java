@@ -5,7 +5,6 @@ import org.usfirst.frc.team4778.robot.commands.Dispense;
 import org.usfirst.frc.team4778.robot.commands.Feed;
 import org.usfirst.frc.team4778.robot.commands.Hang;
 import org.usfirst.frc.team4778.robot.commands.Intake;
-import org.usfirst.frc.team4778.robot.commands.InvertDrive;
 import org.usfirst.frc.team4778.robot.commands.Shoot;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -53,6 +52,6 @@ public class OI {
 		// Gear Chute
 		chuteG.whenPressed(new Chute());
 		//Invert controls
-		invert.whenPressed(new InvertDrive());
+		//invert.whenPressed(new InvertDrive());
 	}
 }
