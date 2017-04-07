@@ -16,7 +16,7 @@ public class Hang extends Command {
 
 	@Override
 	protected void execute() {
-		RobotMap.hangingMechanism1.set(power);
+		RobotMap.hangingMechanism1.set(-power);
 		RobotMap.hangingMechanism2.set(power);
 	}
 
