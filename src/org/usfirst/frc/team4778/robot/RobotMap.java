@@ -8,11 +8,12 @@ import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 public class RobotMap {
 	// Practice Setup
 	// Auto
-	// public static SendableChooser auto = new SendableChooser();
+	public static SendableChooser auto = new SendableChooser();
 	// Left Motors
 	public static Victor L0 = new Victor(0);
 	public static Victor L1 = new Victor(1);

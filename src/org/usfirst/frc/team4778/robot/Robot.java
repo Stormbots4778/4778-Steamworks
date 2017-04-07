@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4778.robot;
 
 import org.usfirst.frc.team4778.robot.commands.auto.AutoCenterGear;
+import org.usfirst.frc.team4778.robot.commands.auto.AutoCrossLine;
 import org.usfirst.frc.team4778.robot.subsystems.Drivetrain;
 
 import com.ctre.CANTalon;
@@ -60,8 +61,8 @@ public class Robot extends IterativeRobot {
 
 	public void initSmartDashboard() {
 		System.out.println("+robot init-smartdashboard");
-		//		RobotMap.auto.addObject("Line Auto", new AutoCrossLine());
-		//		RobotMap.auto.addObject("Center Gear", new AutoCenterGear());
+		RobotMap.auto.addObject("Drive Forward (Cross Line)", new AutoCrossLine());
+		RobotMap.auto.addObject("Center Gear", new AutoCenterGear());
 	}
 
 	public void updateSmartDashboard() {
@@ -70,6 +71,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putBoolean("Shooter Status: ", RobotMap.isShooterOn);
 		SmartDashboard.putBoolean("Ball Feed Status", RobotMap.isFeedOn);
 		SmartDashboard.putNumber("Pressure: ", RobotMap.pressureSensor.getValue());
+		SmartDashboard.putData("Auto Chooser", RobotMap.auto);
 		//		SmartDashboard.putBoolean("Inverted Controls Status: ", RobotMap.isInverted);
 	}
 
@@ -80,7 +82,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = new AutoCenterGear();
+		autonomousCommand = (Command) RobotMap.auto.getSelected();
 		if (autonomousCommand != null) autonomousCommand.start();
 	}
 
