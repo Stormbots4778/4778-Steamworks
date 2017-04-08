@@ -26,7 +26,7 @@ public class OI {
 	public OI() {
 		// Gamepad Calls
 		// Hanging Mechanism
-		coilG.whileHeld(new Hang(1));
+		coilG.whileHeld(new Hang(-0.25));
 		uncoilG.whileHeld(new Hang(-1));
 		// Gear Chute
 		chuteG.whenPressed(new Chute());
